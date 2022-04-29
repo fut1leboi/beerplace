@@ -1,0 +1,27 @@
+@keyframes blurAnim {
+  0%{
+    filter: blur(0px);
+  }
+  100%{
+    filter: blur(2px);
+  }
+}
+
+@mixin underlineAnimation($color: #fff){
+  &{
+    position: relative;
+  }
+  &::after{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: $color;
+    transition: 0.2s linear;
+  }
+  &:hover::after{
+    width: 100%;
+  }
+}

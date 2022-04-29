@@ -1,0 +1,12 @@
+@import '_vars';
+@font-face {
+  font-family: 'Source Sans 3';
+  src: url('../fonts/SourceSans3-VariableFont_wght.ttf');
+}
+
+@mixin fontHelper($fontSize: $fontSizeDefault, $lineHeight: null){
+    @if $lineHeight == null {$lineHeight: $lineHeightDefault}
+    font-size: $fontSize/$fontSizeDefault * 1em;
+    //line-height: percentage(($lineHeight / $lineHeightDefault)/100);
+    line-height: percentage($lineHeight/100);
+}
