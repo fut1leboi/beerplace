@@ -5,6 +5,7 @@ body{
   font-family: 'Source Sans 3';
   font-size: $fontSizeDefault;
   //line-height: percentage();
+  scroll-behavior: smooth;
 }
 
 *{
@@ -41,4 +42,24 @@ ul, li{
 .container{
   width: 1400px;
   margin: 0 auto;
+}
+
+.d-none{
+  display: none !important;
+}
+
+.section{
+  padding-top: 50px;
+  margin: 0 auto;
+  //width: 1400px;
+  color: #000000;
+}
+
+.container{
+  margin: 0 auto;
+  max-width: 1400px;
+}
+
+.text-alternate{
+  color: $primary;
 }

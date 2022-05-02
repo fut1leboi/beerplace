@@ -5,8 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.min.css">
 </head>
 <body>
+
     <header class="header">
         <a href="#" class="logo__link">
             <img src="./assets/img/whitelogo.svg" alt="beerplace" class="logo__img">
@@ -18,49 +20,90 @@
                     <li class="nav__item">О нас</li>
                 </a>
                 <a href="#" class="nav__link">
-                    <li class="nav__item">item2</li>
+                    <li class="nav__item">Галерея</li>
                 </a>
                 <a href="#" class="nav__link">
-                    <li class="nav__item">item3</li>
+                    <li class="nav__item">Контакты</li>
                 </a>
             </ul>
+
+            <input type="text" class="search" placeholder="Поиск">
         </nav>
+
+        <div id="menu" class="hamburger">
+            <div class="hamburger__bar"></div>
+            <div class="hamburger__bar"></div>
+            <div class="hamburger__bar"></div>
+        </div>
     </header>
 
-    <section class="intro">
-        <div class="intro__backimg"></div>
-        <div class="center_view">
-            <ul class="intro__social-list">
-                <li class="intro__social-item">
-                    <a href="" class="intro__social-link">
-                        <i class="intro__social-icon fa-brands fa-vk"></i>
-                    </a>
-                </li>
-                <li class="intro__social-item">
-                    <a href="" class="intro__social-link">
-                        <i class="intro__social-icon fa-brands fa-vk"></i>
-                    </a>
-                </li>
-                <li class="intro__social-item">
-                    <a href="" class="intro__social-link">
-                        <i class="intro__social-icon fa-brands fa-vk"></i>
-                    </a>
-                </li>
-            </ul>
-            <div class="intro__inner">
-                <div class="intro__left">
-                    <a href="#" class="intro__logo">
-                        <img src="./assets/img/whitelogo.svg" alt="das">
-                    </a>
+<section class="intro">
+    <div class="intro__backimg"></div>
+    <div class="center_view">
+        <!--            <ul class="intro__social-list">-->
+        <!--                <li class="intro__social-item">-->
+        <!--                    <a href="" class="intro__social-link">-->
+        <!--                        <i class="intro__social-icon fa-brands fa-vk"></i>-->
+        <!--                    </a>-->
+        <!--                </li>-->
+        <!--                <li class="intro__social-item">-->
+        <!--                    <a href="" class="intro__social-link">-->
+        <!--                        <i class="intro__social-icon fa-brands fa-instagram"></i>-->
+        <!--                    </a>-->
+        <!--                </li>-->
+        <!--                <li class="intro__social-item">-->
+        <!--                    <a href="" class="intro__social-link">-->
+        <!--                        <i class="intro__social-icon fa-brands fa-vk"></i>-->
+        <!--                    </a>-->
+        <!--                </li>-->
+        <!--            </ul>-->
+        <div class="intro__inner">
+            <div class="intro__left">
+                <a href="#" class="intro__logo">
+                    <img src="./assets/img/whitelogo.svg" alt="beerplace">
+                </a>
+            </div>
+            <div class="intro__right">
+                <h2 class="intro__title">Парк культуры и отдыха</h2>
+                <h3 class="intro__subtitle">
+                    В Омске
+                </h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <main class="main">
+        <section class="section">
+            <div class="weather">
+    <!--                <p id="weather" style="color: #000"></p>-->
+                    <p class="weather__text">
+                        В Омске сейчас
+                    </p>
+                    <p class="weather__digit" id="weather"></p>
+                    <p class="weather__text">
+                        По-моему, сейчас отличная погода для прогулки!
+                    </p>
                 </div>
-                <div class="intro__right">
-                    <h2 class="intro__title">Парк культуры и отдыха</h2>
-                    <h4 class="intro__subtitle">
-                        В Омске
-                    </h4>
+        </section>
+        <div class="section">
+            <div class="container">
+                <h4 class="section__title">
+                    Ознакомтесь с <span class="text-alternate">нашими аттракционами</span>
+                </h4>
+
+                <div class="attractions">
+                    <div class="actractions__item">
+                        <img src="./assets/img/attractions/vortex.jpg" alt="vortex" class="attractions__img">
+                        <h4 class="attractions__title">
+                            Вихрь
+                        </h4>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </main>
+
 </body>
 </html>

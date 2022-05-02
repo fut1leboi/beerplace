@@ -40,7 +40,7 @@ module.exports = {
         historyApiFallback: true,
         static: {
             directory: path.join(__dirname, 'public'),
-          },
+        },
         open: true,
         compress: true,
         hot: true,
@@ -59,12 +59,12 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: `./assets/css/${filename('css')}`,
         }),
-        new CopyWebpackPlugin({
-            patterns: [
-                {from: path.resolve(__dirname, 'src/assets/img/') , to: path.resolve(__dirname, 'public/assets/img/')},
-                {from: path.resolve(__dirname, 'src/assets/fonts/') , to: path.resolve(__dirname, 'public/assets/fonts/')},
-            ]
-        })
+        // new CopyWebpackPlugin({
+        //     patterns: [
+        //         {from: path.resolve(__dirname, 'src/assets/img/') , to: path.resolve(__dirname, 'public/assets/img/')},
+        //         {from: path.resolve(__dirname, 'src/assets/fonts/') , to: path.resolve(__dirname, 'public/assets/fonts/')},
+        //     ]
+        // })
     ],
     devtool: isProd ? false : 'source-map',
     module:{
@@ -74,7 +74,7 @@ module.exports = {
                 loader: "html-loader",
                 options: {
                     sources: false,
-                  },
+                },
             },
             {
                 test: /\.css$/i,
@@ -83,13 +83,30 @@ module.exports = {
             {
                 test: /\.s[ac]ss$/i,
                 use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader",
-                {
-                    loader: "sass-loader",
-                    options: {
-                        webpackImporter: false,
-                      },
+                    {
+                        loader: "sass-loader",
+                        options: {
+                            webpackImporter: false,
+                        },
+                    }
+                ],
+            },
+
+            //images
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+                generator: {
+                    filename: './assets/img/[name][ext]'
                 }
-            ],
+            },
+            //fonts
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                type: 'asset/resource',
+                generator: {
+                    filename: './assets/fonts/[name][ext]'
+                }
             },
             {
                 test: /\.js$/i,
