@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея</title>
+    <link rel="stylesheet" href="./assets/css/style.min.css">
+    <style>
+
+    </style>
+<script defer src="./assets/js/vendors-node_modules_babel_runtime_regenerator_index_js-node_modules_fortawesome_fontawesome--b86476.js"></script><script defer src="./assets/js/main.js"></script><link href="./assets/css/main.css" rel="stylesheet"></head>
+<body>
+
+    <header class="header">
+        <a href="./index.html" class="logo__link">
+            <img src="./assets/img/whitelogo.svg" alt="beerplace" class="logo__img">
+        </a>
+
+        <nav class="nav">
+            <ul class="nav__list">
+                <a href="./index.html" class="nav__link">
+                    <li class="nav__item">Главная</li>
+                </a>
+                <a href="./gallery.html" class="nav__link">
+                    <li class="nav__item">Галерея</li>
+                </a>
+                <a href="./contacts.html" class="nav__link">
+                    <li class="nav__item">Контакты</li>
+                </a>
+            </ul>
+
+            <input type="text" class="search" placeholder="Поиск">
+        </nav>
+
+        <div id="menu" class="hamburger">
+            <div class="hamburger__bar"></div>
+            <div class="hamburger__bar"></div>
+            <div class="hamburger__bar"></div>
+        </div>
+    </header>
+
+<section class="intro">
+    <div class="intro__backimg"></div>
+    <div class="center_view">
+        <!--            <ul class="intro__social-list">-->
+        <!--                <li class="intro__social-item">-->
+        <!--                    <a href="" class="intro__social-link">-->
+        <!--                        <i class="intro__social-icon fa-brands fa-vk"></i>-->
+        <!--                    </a>-->
+        <!--                </li>-->
+        <!--                <li class="intro__social-item">-->
+        <!--                    <a href="" class="intro__social-link">-->
+        <!--                        <i class="intro__social-icon fa-brands fa-instagram"></i>-->
+        <!--                    </a>-->
+        <!--                </li>-->
+        <!--                <li class="intro__social-item">-->
+        <!--                    <a href="" class="intro__social-link">-->
+        <!--                        <i class="intro__social-icon fa-brands fa-vk"></i>-->
+        <!--                    </a>-->
+        <!--                </li>-->
+        <!--            </ul>-->
+        <div class="intro__inner">
+            <div class="intro__left">
+                <a href="./index.html" class="intro__logo">
+                    <img src="./assets/img/whitelogo.svg" alt="beerplace">
+                </a>
+            </div>
+            <div class="intro__right">
+                <h2 class="intro__title">Парк культуры и отдыха</h2>
+                <h3 class="intro__subtitle">
+                    В Омске
+                </h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <main class="main">
+        <!-- Images used to open the lightbox -->
+        <section class="section">
+            <h4 class="section__title">
+                Галерея
+            </h4>
+            <div class="container">
+                <div class="row">
+                    <div class="column">
+                        <img src="./assets/img/vortex.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow">
+                        <p class="column__text">Вихрь</p>
+                    </div>
+                    <div class="column">
+                        <img src="./assets/img/seashells.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow">
+                        <p class="column__text">Ракушки</p>
+                    </div>
+                    <div class="column">
+                        <img src="./assets/img/panoramic_wheel.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow">
+                        <p class="column__text">Колесо обозрения</p>
+                    </div>
+                    <div class="column">
+                        <img src="./assets/img/horses.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow">
+                        <p class="column__text">Лошадки</p>
+                    </div>
+                </div>
+
+                <!-- The Modal/Lightbox -->
+                <div id="myModal" class="modal" style="display: none">
+                    <span class="close cursor" onclick="closeModal()">&times;</span>
+                    <div class="modal-content">
+
+                        <div class="mySlides">
+                            <div class="numbertext">1 / 4</div>
+                            <img class="demo-full" src="./assets/img/vortex.jpg">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">2 / 4</div>
+                            <img class="demo-full" src="./assets/img/seashells.jpg">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">3 / 4</div>
+                            <img class="demo-full" src="./assets/img/panoramic_wheel.jpg">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">4 / 4</div>
+                            <img class="demo-full" src="./assets/img/horses.jpg">
+                        </div>
+
+                        <!-- Next/previous controls -->
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                        <!-- Caption text -->
+                        <div class="caption-container">
+                            <p id="caption"></p>
+                        </div>
+
+                        <!-- Thumbnail image controls -->
+                        <div class="column">
+                            <img class="demo" src="./assets/img/vortex.jpg" onclick="currentSlide(1)" alt="Вихрь">
+                        </div>
+
+                        <div class="column">
+                            <img class="demo" src="./assets/img/seashells.jpg" onclick="currentSlide(2)" alt="Ракушки">
+                        </div>
+
+                        <div class="column">
+                            <img class="demo" src="./assets/img/panoramic_wheel.jpg" onclick="currentSlide(3)" alt="Колесо обозрения">
+                        </div>
+
+                        <div class="column">
+                            <img class="demo" src="./assets/img/horses.jpg" onclick="currentSlide(4)" alt="Лошадки">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+
+            <nav class="social">
+                <li class="social__item">
+                    <a href="" class="social__link">
+                        <i class="social__ico fa-brands fa-vk"></i>
+                    </a>
+                </li>
+                <li class="social__item">
+                    <a href="" class="social__link">
+                        <i class=" social__ico fa-brands fa-instagram-square"></i>
+                    </a>
+                </li>
+                <li class="social__item">
+                    <a href="" class="social__link">
+                        <i class="social__ico fa-brands fa-facebook-square"></i>
+                    </a>
+                </li>
+            </nav>
+            <hr class="footer__split">
+
+            <div class="footer__row">
+                <div class="footer__col">
+                    <nav class="footer-nav">
+                        <li class="footer-nav__item">
+                            <a href="./index.html" class="footer-nav__link">Главная</a>
+                        </li>
+                        <li class="footer-nav__item">
+                            <a href="./gallery.html" class="footer-nav__link">Галерея</a>
+                        </li>
+                        <li class="footer-nav__item">
+                            <a href="./contacts.html" class="footer-nav__link">Контакты</a>
+                        </li>
+                    </nav>
+                </div>
+                <div class="footer__col">
+                    <p class="footer-nav__item"><span class="text-alternate">Адрес:</span> c. Мичурино</p>
+                    <p class="footer-nav__item"><span class="text-alternate">Телефон:</span> 831290312</p>
+                </div>
+            </div>
+
+    </footer>
+
+    <script>
+        // Open the Modal
+        function openModal() {
+            document.getElementById("myModal").style.display = "flex";
+            document.getElementById("menu").style.display = "none";
+        }
+
+        // Close the Modal
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+            document.getElementById("menu").style.display = "flex";
+        }
+
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Next/previous controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        // Thumbnail image controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            var captionText = document.getElementById("caption");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+            captionText.innerHTML = dots[slideIndex-1].alt;
+        }
+    </script>
+</body>
+</html>
