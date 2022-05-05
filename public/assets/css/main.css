@@ -102,15 +102,18 @@ ul, li {
     display: flex; } }
 
 .hamburger__bar {
-  height: 3px;
+  height: 6px;
   width: 100%;
-  background: #fff; }
+  background: #fff;
+  border: 1px solid #bfbfbf;
+  border-radius: 10px; }
 
 @font-face {
   font-family: 'Source Sans 3';
   src: url(../.././assets/fonts/SourceSans3-VariableFont_wght.ttf); }
 
 .form {
+  position: relative;
   margin: 75px auto;
   width: 50%;
   display: flex;

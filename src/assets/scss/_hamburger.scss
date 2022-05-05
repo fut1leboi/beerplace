@@ -20,9 +20,10 @@
     display: flex;
   }
   &__bar{
-    height: 3px;
+    height: 6px;
     width: 100%;
     background: #fff;
-
+    border: 1px solid #bfbfbf;
+    border-radius: 10px;
   }
 }
