@@ -6,6 +6,11 @@ import '@fortawesome/fontawesome-free/js/brands';
 import '../img/whitelogo.svg';
 import '../img/intro.jpg';
 import '../img/attractions/vortex.jpg';
+import '../img/attractions/panoramic_wheel.jpg';
+import '../img/attractions/seashells.jpg';
+import '../img/shapes/smile.svg';
+import '../img/shapes/circle.svg';
+import '../img/shapes/triangle.svg';
 
 import '../scss/main.scss';
 import '../../index.html';

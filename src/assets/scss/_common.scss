@@ -51,13 +51,15 @@ ul, li{
 .section{
   padding-top: 50px;
   margin: 0 auto;
-  //width: 1400px;
   color: #000000;
 }
 
 .container{
   margin: 0 auto;
   max-width: 1400px;
+  @media screen and (max-width: 1400px) {
+    width: 100%;
+  }
 }
 
 .text-alternate{

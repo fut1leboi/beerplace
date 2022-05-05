@@ -8,5 +8,5 @@
     @if $lineHeight == null {$lineHeight: $lineHeightDefault}
     font-size: $fontSize/$fontSizeDefault * 1em;
     //line-height: percentage(($lineHeight / $lineHeightDefault)/100);
-    line-height: percentage($lineHeight/100);
+
 }
