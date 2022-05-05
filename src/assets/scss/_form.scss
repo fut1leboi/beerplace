@@ -1,0 +1,53 @@
+@import '_vars';
+@import '_font';
+.form{
+  margin: 75px auto;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  @media screen and (max-width: $sm-bp) {
+    width: 100%;
+    padding: 0 20px;
+  }
+  &__label{
+    @include fontHelper(24px);
+  }
+  &__control{
+    appearance: none;
+    border: 2px solid #bfbfbf;
+    border-radius: 2px;
+    width: 100%;
+    padding: 5px 15px;
+    @include fontHelper(20px);
+    font-family: 'Source Sans 3';
+    resize: none;
+    margin: 5px 0;
+    &:focus{
+      outline: 2px $primary solid;
+    }
+    &-area{
+      @extend .form__control;
+      height: 150px;
+      @include fontHelper(16px);
+    }
+  }
+  &__submit{
+    background: $primary;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 2px;
+    color: #fff;
+    padding: 10px;
+    @include fontHelper(20px);
+    font-family: 'Source Sans 3';
+    text-transform: uppercase;
+    font-weight: bold;
+    &:focus{
+      outline: 2px darken($primary, 10) solid;
+    }
+  }
+
+}

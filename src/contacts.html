@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты</title>
+    <link rel="stylesheet" href="./assets/css/style.min.css">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=121c95ec-d9ed-43a8-b9ae-a42cd1133ba9&lang=ru_RU" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+        // Функция ymaps.ready() будет вызвана, когда
+        // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
+        ymaps.ready(init);
+        function init(){
+            // Создание карты.
+
+            var myGeoObject = new ymaps.GeoObject({
+                geometry: {
+                    type: "Point", // тип геометрии - точка
+                    coordinates: [54.9726084, 73.4170687], // координаты точки
+                    properties: {
+                        hintContent: "Москва-Берлин"
+                    }
+                }
+            });
+            let myMap = new ymaps.Map("map", {
+                // Координаты центра карты.
+                // Порядок по умолчанию: «широта, долгота».
+                // Чтобы не определять координаты центра карты вручную,
+                // воспользуйтесь инструментом Определение координат.
+                center: [54.9726084, 73.4170687],
+                // Уровень масштабирования. Допустимые значения:
+                // от 0 (весь мир) до 19.
+                zoom: 14,
+                controls: []
+            });
+
+            myMap.geoObjects.add(myGeoObject);
+        }
+    </script>
+</head>
+<body>
+
+    <header class="header">
+        <a href="./index.html" class="logo__link">
+            <img src="./assets/img/whitelogo.svg" alt="beerplace" class="logo__img">
+        </a>
+
+        <nav class="nav">
+            <ul class="nav__list">
+                <a href="./index.html" class="nav__link">
+                    <li class="nav__item">Главная</li>
+                </a>
+                <a href="./gallery.html" class="nav__link">
+                    <li class="nav__item">Галерея</li>
+                </a>
+                <a href="./contacts.html" class="nav__link">
+                    <li class="nav__item">Контакты</li>
+                </a>
+            </ul>
+
+            <input type="text" class="search" placeholder="Поиск">
+        </nav>
+
+        <div id="menu" class="hamburger">
+            <div class="hamburger__bar"></div>
+            <div class="hamburger__bar"></div>
+            <div class="hamburger__bar"></div>
+        </div>
+    </header>
+
+<section class="intro">
+    <div class="intro__backimg"></div>
+    <div class="center_view">
+        <div class="intro__inner">
+            <div class="intro__left">
+                <a href="./index.html" class="intro__logo">
+                    <img src="./assets/img/whitelogo.svg" alt="beerplace">
+                </a>
+            </div>
+            <div class="intro__right">
+                <h2 class="intro__title">Парк культуры и отдыха</h2>
+                <h3 class="intro__subtitle">
+                    В Омске
+                </h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <main class="main">
+        <section class="section">
+            <h4 class="section__title">
+                Наши <span class="text-alternate">контакты</span>
+            </h4>
+            <div class="container">
+                <div class="contacts">
+                    <div class="contacts__item">
+                        <p class="contacts__key text-alternate">Адрес</p>
+                        <div class="contacts__underline"></div>
+                        <p class="contacts__value">с. Мичурино</p>
+                    </div>
+                    <div class="contacts__item">
+                        <p class="contacts__key text-alternate">Телефон</p>
+                        <div class="contacts__underline"></div>
+                        <p class="contacts__value">489124921</p>
+                    </div>
+                </div>
+            </div>
+            <h4 class="section__title">
+                Мы <span class="text-alternate">на карте</span>
+            </h4>
+            <div class="container">
+                <div id="map" class="yandex-map" height="600px"></div>
+            </div>
+        </section>
+        <section class="section">
+            <h4 class="section__title">
+                Свяжитесь с <span class="text-alternate">нами</span>
+            </h4>
+            <div class="container">
+                <form action="#" class="form" method="post">
+                    <label class="form__label">
+                        Введите ваше имя
+                        <input class="form__control" type="text" placeholder="Имя">
+                    </label>
+                    <label class="form__label">
+                        Введите ваш email
+                        <input class="form__control" type="email" placeholder="email">
+                    </label>
+                    <label class="form__label">
+                        Ваше сообщение
+                        <textarea class="form__control-area" placeholder="Ваше сообщение" cols="30" rows="10"></textarea>
+                    </label>
+                    <input type="submit" class="form__submit" value="Отправить">
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!--121c95ec-d9ed-43a8-b9ae-a42cd1133ba9-->
+
+    <footer class="footer">
+
+            <nav class="social">
+                <li class="social__item">
+                    <a href="" class="social__link">
+                        <i class="social__ico fa-brands fa-vk"></i>
+                    </a>
+                </li>
+                <li class="social__item">
+                    <a href="" class="social__link">
+                        <i class=" social__ico fa-brands fa-instagram-square"></i>
+                    </a>
+                </li>
+                <li class="social__item">
+                    <a href="" class="social__link">
+                        <i class="social__ico fa-brands fa-facebook-square"></i>
+                    </a>
+                </li>
+            </nav>
+            <hr class="footer__split">
+
+            <div class="footer__row">
+                <div class="footer__col">
+                    <nav class="footer-nav">
+                        <li class="footer-nav__item">
+                            <a href="./index.html" class="footer-nav__link">Главная</a>
+                        </li>
+                        <li class="footer-nav__item">
+                            <a href="./gallery.html" class="footer-nav__link">Галерея</a>
+                        </li>
+                        <li class="footer-nav__item">
+                            <a href="./contacts.html" class="footer-nav__link">Контакты</a>
+                        </li>
+                    </nav>
+                </div>
+                <div class="footer__col">
+                    <p class="footer-nav__item"><span class="text-alternate">Адрес:</span> c. Мичурино</p>
+                    <p class="footer-nav__item"><span class="text-alternate">Телефон:</span> 831290312</p>
+                </div>
+            </div>
+    </footer>
+
+</body>
+</html>

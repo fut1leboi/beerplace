@@ -56,6 +56,15 @@ module.exports = {
                 collapseWhitespace: isProd
             }
         }),
+        new HTMLWebpackPlugin({
+            filename: 'gallery.html',
+            template: './gallery.html'
+        }),
+        new HTMLWebpackPlugin({
+            filename: 'contacts.html',
+            template: './contacts.html'
+        }),
+
         new MiniCssExtractPlugin({
             filename: `./assets/css/${filename('css')}`,
         }),

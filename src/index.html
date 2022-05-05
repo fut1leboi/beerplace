@@ -4,25 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Beerplace</title>
     <link rel="stylesheet" href="./assets/css/style.min.css">
 </head>
 <body>
 
     <header class="header">
-        <a href="#" class="logo__link">
+        <a href="./index.html" class="logo__link">
             <img src="./assets/img/whitelogo.svg" alt="beerplace" class="logo__img">
         </a>
 
         <nav class="nav">
+            <button class="nav__close" id="close-nav">&#10006;</button>
             <ul class="nav__list">
-                <a href="#" class="nav__link">
-                    <li class="nav__item">О нас</li>
+                <a href="./gallery.html" class="nav__link">
+                    <li class="nav__item">Главная</li>
                 </a>
-                <a href="#" class="nav__link">
+                <a href="./gallery.html" class="nav__link">
                     <li class="nav__item">Галерея</li>
                 </a>
-                <a href="#" class="nav__link">
+                <a href="./contacts.html" class="nav__link">
                     <li class="nav__item">Контакты</li>
                 </a>
             </ul>
@@ -59,7 +60,7 @@
         <!--            </ul>-->
         <div class="intro__inner">
             <div class="intro__left">
-                <a href="#" class="intro__logo">
+                <a href="./index.html" class="intro__logo">
                     <img src="./assets/img/whitelogo.svg" alt="beerplace">
                 </a>
             </div>
@@ -83,7 +84,6 @@
                     </p>
                     <p class="weather__digit" id="weather"></p>
                     <p class="weather__text">
-                        По-моему, сейчас отличная погода для прогулки!
                     </p>
                 </div>
         </section>
@@ -141,11 +141,70 @@
             </div>
         </section>
         <section class="section">
-            <form action="#" class="form" method="post">
-                
-            </form>
+            <h4 class="section__title">
+                Свяжитесь с <span class="text-alternate">нами</span>
+            </h4>
+            <div class="container">
+                <form action="#" class="form" method="post">
+                    <label class="form__label">
+                        Введите ваше имя
+                        <input class="form__control" type="text" placeholder="Имя">
+                    </label>
+                    <label class="form__label">
+                        Введите ваш email
+                    <input class="form__control" type="email" placeholder="email">
+                    </label>
+                        <label class="form__label">
+                            Ваше сообщение
+                        <textarea class="form__control-area" placeholder="Ваше сообщение" cols="30" rows="10"></textarea>
+                        </label>
+                    <input type="submit" class="form__submit" value="Отправить">
+                </form>
+            </div>
         </section>
     </main>
+
+    <footer class="footer">
+
+            <nav class="social">
+                <li class="social__item">
+                    <a href="" class="social__link">
+                        <i class="social__ico fa-brands fa-vk"></i>
+                    </a>
+                </li>
+                <li class="social__item">
+                    <a href="" class="social__link">
+                        <i class=" social__ico fa-brands fa-instagram-square"></i>
+                    </a>
+                </li>
+                <li class="social__item">
+                    <a href="" class="social__link">
+                        <i class="social__ico fa-brands fa-facebook-square"></i>
+                    </a>
+                </li>
+            </nav>
+            <hr class="footer__split">
+
+            <div class="footer__row">
+                <div class="footer__col">
+                    <nav class="footer-nav">
+                        <li class="footer-nav__item">
+                            <a href="./index.html" class="footer-nav__link">Главная</a>
+                        </li>
+                        <li class="footer-nav__item">
+                            <a href="./gallery.html" class="footer-nav__link">Галерея</a>
+                        </li>
+                        <li class="footer-nav__item">
+                            <a href="./contacts.html" class="footer-nav__link">Контакты</a>
+                        </li>
+                    </nav>
+                </div>
+                <div class="footer__col">
+                    <p class="footer-nav__item"><span class="text-alternate">Адрес:</span> c. Мичурино</p>
+                    <p class="footer-nav__item"><span class="text-alternate">Телефон:</span> 831290312</p>
+                </div>
+            </div>
+    </footer>
 
 </body>
 </html>

@@ -3,6 +3,9 @@
 @import '_font';
 @import '_vars';
 @import '_hamburger';
+@import '_form';
+@import '_gallery';
+@import '_contacts';
 
 .intro{
   width: 100%;
@@ -89,7 +92,9 @@
       border-radius: 100%;
       display: flex;
     }
-    &-icon{
+    &-ico{
+      color: #000;
+      background: #000;
       @include fontHelper(40px, 10);
       transition: 0.1s linear;
       border: 1px solid #fff;
@@ -108,6 +113,7 @@
 
 
 .header{
+  color: #fff;
   background: rgba(0,0,0, 0.4);
   box-shadow: 0px 25px 45px 0px rgba(0, 0, 0, 0.27);
   position: absolute;
@@ -115,7 +121,7 @@
   z-index: 100;
   left: 0;
   width: 100%;
-  padding: 30px 100px;
+  padding: 20px 100px;
   //padding: 30px 100px;
   //background: rgba(0,0,0,0.4);
   //background: #d9d9d9;
@@ -127,8 +133,7 @@
   @media screen and (max-width: $sm-bp) {
     flex-direction: column;
     align-items: center;
-    padding: 0;
-    margin-top: 20px;
+    padding-top: 20px;
   }
 }
 
@@ -148,18 +153,38 @@
   outline: none;
   border: none;
   background: none;
-  color: white;
+  color: inherit;
   //opacity: 1;
   border: 2px solid #fff;
   padding: 5px 20px;
   border-radius: 20px;
   font-family: inherit;
-  @include fontHelper(18px)
+  @include fontHelper(18px);
+  @media screen and (max-width: $sm-bp) {
+    border: 2px solid #bfbfbf;
+  }
+
 }
 .nav{
   display: flex;
   gap: 70px;
   align-items: center;
+  color: inherit;
+
+  &__close{
+    background: none;
+    outline: none;
+    border: none;
+    @include fontHelper(32px);
+    display: none;
+    cursor: pointer;
+    padding: 0;
+    //margin: 0;
+    width: 100%;
+    justify-content: flex-end;
+    margin-right: 70px;
+    color: #bfbfbf;
+  }
 
   &__reveal{
     //@extend
@@ -189,7 +214,6 @@
     @include fontHelper(20px);
     @media screen and (max-width: $sm-bp) {
       @include fontHelper(26px);
-      @include underlineAnimation(#000);
     }
   }
 
@@ -226,7 +250,7 @@
 
 .weather{
   background: radial-gradient(#11FFBD, #AAFFA9);
-  animation: gradientAnim 1s linear alternate-reverse;
+  animation: gradientAnim 10s linear infinite;
   flex-direction: column;
   color: #fff;
   justify-content: center;
@@ -251,7 +275,7 @@
   text-align: center;
   line-height: 100px;
   @media screen and (max-width: $sm-bp) {
-    @include fontHelper(50px);
+    @include fontHelper(48px);
   }
 }
 
@@ -260,10 +284,13 @@
 }
 
 .section{
+  padding: 75px 0;
   &__title{
     @include fontHelper(34px);
     text-align: center;
     //font-weight: 700;
+    color: #000;
+    padding: 20px 0;
   }
 }
 
@@ -291,6 +318,7 @@
     height: auto;
     position: relative;
     transform: translate(20px, -20px);
+
     //background:;
     &-container{
       position: relative;
@@ -301,6 +329,10 @@
       @media screen and (max-width: 1400px) {
         width: 100%;
       }
+    }
+    @media screen and (max-width: $sm-bp) {
+    width: 100%;
+      transform: none;
     }
   }
   &__under-img{
@@ -317,6 +349,11 @@
       left: 0;
       transform: rotate(12deg);
     }
+    @media screen and (max-width: $sm-bp) {
+      transform: none;
+      top: 0;
+      right: 10px;
+    }
   }
   &__text{
     padding: 0 50px;
@@ -324,6 +361,9 @@
     height: 100%;
     display: flex;
     flex-direction: column;
+    @media screen and (max-width: $sm-bp) {
+      padding: 0
+    }
   }
   &__title{
     @include fontHelper(75px);
@@ -344,6 +384,94 @@
     margin-top: 20px;
     @include fontHelper(20px);
   }
+}
+
+.social{
+  //padding: 0 100px;
+  display: flex;
+  gap: 20px;
+  color: $primary;
+  align-items: center;
+  width: 75%;
+  justify-content: flex-end;
+  background: transparent;
+  @media screen and (max-width: $sm-bp) {
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+  }
+  &__item{
+    border-radius: 2px;
+    background: transparent;
+  }
+  &__ico{
+    padding: 20px;
+    border-radius: 100%;
+    @include fontHelper(64px);
+    transition: 0.2s linear;
+    background: transparent;
+    border: 1px solid #fff;
+    &:hover{
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      //@include fontHelper(50px);
+      border: 1px solid $primary
+    }
+  }
+}
+
+.footer{
+  padding: 50px 100px;
+  border-top: 1px solid #bfbfbf;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #000;
+  justify-content: center;
+  box-shadow: 0px -6px 27px 9px rgba(34, 60, 80, 0.06);
+  &__row{
+    display: flex;
+    width: 75%;
+    justify-content: space-between;
+    align-items: center;
+    @media screen and (max-width: $sm-bp) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+  }
+  &__col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    @include fontHelper(20px);
+  }
+  &__split{
+    border: none;
+    border: 1px solid #bfbfbf;
+    width: 75%;
+    margin: 25px;
+  }
+  &-nav{
+    color: #999999;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    &__item{
+      transition: 0.1s linear;
+      text-align: center;
+      @include underlineAnimation(#999999)
+    }
+  }
+}
+
+.yandex-map{
+  margin: 0 auto;
+  width: 100%;
+  border: 2px solid #bfbfbf;
+  border-radius: 2px;
+  height: 600px;
 }
 
 //background: #AAFFA9;  /* fallback for old browsers */

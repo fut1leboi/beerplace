@@ -1,0 +1,35 @@
+@import '_vars';
+@import '_font';
+.contacts{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    @include fontHelper(24px);
+    &__item{
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+    }
+    &__underline{
+      height: 100%;
+      border-bottom: 2px solid #bfbfbf;
+      margin: 0 30px;
+      width: 100%;
+      padding-top: 10px;
+      //background: black;
+    }
+    &__key{
+      width: 5%;
+      text-align: center;
+      @media screen and (max-width: $sm-bp) {
+        width: 100%;
+      }
+    }
+    &__value{
+      width: 15%;
+      @media screen and (max-width: $sm-bp) {
+        width: 100%;
+      }
+      text-align: center;
+    }
+}

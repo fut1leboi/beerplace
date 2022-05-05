@@ -1,3 +1,5 @@
+@import '_vars';
+
 @keyframes blurAnim {
   0%{
     filter: blur(0px);
@@ -23,26 +25,35 @@
     //50%{
     //  background: radial-gradient(#11FFBD, #AAFFA9);
     //}
+    0%{
+      background-position: 0;
+    }
+    50%{
+      background-position: 0 250px;
+    }
     100%{
       //background: linear-gradient(to right, #AAFFA9, #11FFBD);
       //background: linear-gradient(to right, #11FFBD, #AAFFA9);
-      background-position: 0 250px;
+      background-position: 0;
     }
 }
 
-@mixin underlineAnimation($color: #fff){
+@mixin underlineAnimation($color: #000){
   &{
     position: relative;
   }
   &::after{
     content: '';
     position: absolute;
-    bottom: -15px;
+    bottom: -5px;
     left: 0;
     width: 0%;
     height: 2px;
     background-color: $color;
     transition: 0.2s linear;
+    @media screen and (max-width: $sm-bp) {
+      bottom: -15px;
+    }
   }
   &:hover::after{
     width: 100%;

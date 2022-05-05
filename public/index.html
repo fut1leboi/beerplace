@@ -11,18 +11,15 @@
 
     <header class="header">
         <a href="#" class="logo__link">
-            <img src="./assets/img/whitelogo.svg" alt="beerplace" class="logo__img">
+            <img src="./assets/img/logo_gradient.svg" alt="beerplace" class="logo__img">
         </a>
 
         <nav class="nav">
             <ul class="nav__list">
-                <a href="#" class="nav__link">
-                    <li class="nav__item">О нас</li>
-                </a>
-                <a href="#" class="nav__link">
+                <a href="./gallery.html" class="nav__link">
                     <li class="nav__item">Галерея</li>
                 </a>
-                <a href="#" class="nav__link">
+                <a href="./contacts.html" class="nav__link">
                     <li class="nav__item">Контакты</li>
                 </a>
             </ul>
@@ -83,11 +80,10 @@
                     </p>
                     <p class="weather__digit" id="weather"></p>
                     <p class="weather__text">
-                        По-моему, сейчас отличная погода для прогулки!
                     </p>
                 </div>
         </section>
-        <div class="section">
+        <section class="section">
             <div class="container">
                 <h4 class="section__title">
                     Ознакомтесь с <span class="text-alternate">нашими аттракционами</span>
@@ -95,8 +91,8 @@
 
                 <div class="attractions">
                     <div class="attractions__item">
-                        <div class="attractions__img-container">
-                            <div class="attractions__under-img"></div>
+                        <div class="attractions__img-container" style="background: #BF3F3F">
+                            <img src="./assets/img/smile.svg" class="attractions__under-img">
                             <img src="./assets/img/vortex.jpg" alt="" class="attractions__img">
                         </div>
                         <div class="attractions__text">
@@ -112,25 +108,25 @@
 
                         <div class="attractions__text">
                             <h4 class="attractions__title">
-                                Вихрь
+                                Колесо обозрения
                             </h4>
                             <p class="attractions__descr">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium doloribus et magni repellendus rerum sed sit sunt. Exercitationem facilis hic sapiente. A aperiam est itaque labore non recusandae sed totam.
                             </p>
                         </div>
-                        <img class="attractions__img-container">
-                            <img src="./assets/img/smile.svg" class="attractions__under-img">
-                            <img src="./assets/img/vortex.jpg" alt="" class="attractions__img">
+                        <div class="attractions__img-container" style="background: #3FB8BF">
+                            <img src="./assets/img/triangle.svg" class="attractions__under-img-right">
+                            <img src="./assets/img/panoramic_wheel.jpg" alt="" class="attractions__img-right">
                         </div>
                     </div>
                     <div class="attractions__item">
-                        <div class="attractions__img-container">
-                            <div class="attractions__under-img"></div>
-                            <img src="./assets/img/vortex.jpg" alt="" class="attractions__img">
+                        <div class="attractions__img-container" style="background:#FFFD8E">
+                            <img src="./assets/img/circle.svg" class="attractions__under-img">
+                            <img src="./assets/img/seashells.jpg" alt="" class="attractions__img">
                         </div>
                         <div class="attractions__text">
                             <h4 class="attractions__title">
-                                Вихрь
+                                Ракушки
                             </h4>
                             <p class="attractions__descr">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium doloribus et magni repellendus rerum sed sit sunt. Exercitationem facilis hic sapiente. A aperiam est itaque labore non recusandae sed totam.
@@ -139,8 +135,72 @@
                     </div>
                 </div>
             </div>
-        
+        </section>
+        <section class="section">
+            <h4 class="section__title">
+                Свяжитесь с <span class="text-alternate">нами</span>
+            </h4>
+            <div class="container">
+                <form action="#" class="form" method="post">
+                    <label class="form__label">
+                        Введите ваше имя
+                        <input class="form__control" type="text" placeholder="Имя">
+                    </label>
+                    <label class="form__label">
+                        Введите ваш email
+                    <input class="form__control" type="email" placeholder="email">
+                    </label>
+                        <label class="form__label">
+                            Ваше сообщение
+                        <textarea class="form__control-area" placeholder="Ваше сообщение" cols="30" rows="10"></textarea>
+                        </label>
+                    <input type="submit" class="form__submit" value="Отправить">
+                </form>
+            </div>
+        </section>
     </main>
+
+    <footer class="footer">
+
+            <nav class="social">
+                <li class="social__item">
+                    <a href="" class="social__link">
+                        <i class="social__ico fa-brands fa-vk"></i>
+                    </a>
+                </li>
+                <li class="social__item">
+                    <a href="" class="social__link">
+                        <i class="social__ico fa-brands fa-instagram-square"></i>
+                    </a>
+                </li>
+                <li class="social__item">
+                    <a href="" class="social__link">
+                        <i class="social__ico fa-brands fa-facebook-square"></i>
+                    </a>
+                </li>
+            </nav>
+            <hr class="footer__split">
+
+            <div class="footer__row">
+                <div class="footer__col">
+                    <nav class="footer-nav">
+                        <li class="footer-nav__item">
+                            <a href="./index.html" class="footer-nav__link">Главная</a>
+                        </li>
+                        <li class="footer-nav__item">
+                            <a href="./gallery.html" class="footer-nav__link">Галерея</a>
+                        </li>
+                        <li class="footer-nav__item">
+                            <a href="./contacts.html" class="footer-nav__link">Контакты</a>
+                        </li>
+                    </nav>
+                </div>
+                <div class="footer__col">
+                    <p class="footer-nav__item"><span class="text-alternate">Адрес:</span> c. Мичурино</p>
+                    <p class="footer-nav__item"><span class="text-alternate">Телефон:</span> 831290312</p>
+                </div>
+            </div>
+    </footer>
 
 </body>
 </html>

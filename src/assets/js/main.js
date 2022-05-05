@@ -4,16 +4,22 @@ import '@fortawesome/fontawesome-free/js/regular';
 import '@fortawesome/fontawesome-free/js/brands';
 
 import '../img/whitelogo.svg';
+import '../img/logo_gradient.svg';
 import '../img/intro.jpg';
+import '../img/intro1.jpg';
+import '../img/intro2.jpg';
 import '../img/attractions/vortex.jpg';
 import '../img/attractions/panoramic_wheel.jpg';
 import '../img/attractions/seashells.jpg';
+import '../img/attractions/horses.jpg';
 import '../img/shapes/smile.svg';
 import '../img/shapes/circle.svg';
 import '../img/shapes/triangle.svg';
 
 import '../scss/main.scss';
 import '../../index.html';
+import '../../gallery.html';
+import '../../contacts.html';
 
 import axios from "axios";
 
@@ -24,30 +30,49 @@ const options = {
 
 };
 
-const App = () => {
-    const getWeather = async(toSet) => {
-        let weather = axios.request(options)
-            .then(response=>(response.data.main.temp-273.15).toFixed(1)+'°C')
-            .catch(err=>console.log(err));
-        toSet.innerHTML = `<div class="loader"></div>`
-        toSet.innerHTML = await weather;
-    }
 
+
+const App = () => {
+
+    const weatherText = document.getElementsByClassName('weather__text')[1];
     const hamburgerMenu = document.querySelector('#menu');
     const headerNav = document.querySelector('.nav');
     const weatherContainer = document.querySelector('#weather');
-
-
-    getWeather(weatherContainer);
-    if(window.innerWidth < 926){
-
-        const revealNav = (event) => {
-            event.preventDefault();
-            headerNav.classList.toggle('nav__reveal');
+    const navClose = document.querySelector('#close-nav');
+    const getWeather = async(toSet, text) => {
+        let weather = axios.request(options)
+            .then(response=>(response.data.main.temp-273.15).toFixed(1))
+            .catch(err=>console.log(err));
+        toSet.innerHTML = `<div class="loader"></div>`;
+        if(await weather >= 18){
+            text.innerHTML = 'Сейчас отличная погода для прогулки!';
         }
-        hamburgerMenu.style.display = "flex";
-        hamburgerMenu.addEventListener('click', (e)=>revealNav(e));
+        else if(await weather < 18){
+            text.innerHTML = 'Похоже, придется надеть куртку или ветровку, чтобы выйти на прогулку!';
+        }
+        else if(await weather < 5){
+            text.innerHTML = 'Брр... Погода на улице не очень, может прогуляться в следующий раз?';
+        }
+        toSet.innerHTML = await weather+'°C';
     }
+
+
+    getWeather(weatherContainer, weatherText);
+
+    const revealNav = (event) => {
+        event.preventDefault();
+        headerNav.classList.toggle('nav__reveal');
+        navClose.style.display = 'flex';
+    }
+
+    const collapseNav = (event) => {
+        event.preventDefault();
+        headerNav.classList.toggle('nav__reveal');
+        navClose.style.display = 'none'
+    }
+    hamburgerMenu.addEventListener('click', (e)=>revealNav(e));
+    navClose.addEventListener('click', (e)=>collapseNav(e));
+
 }
 
 document.addEventListener('DOMContentLoaded', App)

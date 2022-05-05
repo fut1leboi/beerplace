@@ -21,12 +21,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _fortawesome_fontawesome_free_js_brands__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fortawesome/fontawesome-free/js/brands */ "../node_modules/@fortawesome/fontawesome-free/js/brands.js");
 /* harmony import */ var _fortawesome_fontawesome_free_js_brands__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_fontawesome_free_js_brands__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _img_whitelogo_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../img/whitelogo.svg */ "./assets/img/whitelogo.svg");
-/* harmony import */ var _img_intro_jpg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../img/intro.jpg */ "./assets/img/intro.jpg");
-/* harmony import */ var _img_attractions_vortex_jpg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../img/attractions/vortex.jpg */ "./assets/img/attractions/vortex.jpg");
-/* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../scss/main.scss */ "./assets/scss/main.scss");
-/* harmony import */ var _index_html__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../index.html */ "./index.html");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! axios */ "../node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _img_logo_gradient_svg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../img/logo_gradient.svg */ "./assets/img/logo_gradient.svg");
+/* harmony import */ var _img_intro_jpg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../img/intro.jpg */ "./assets/img/intro.jpg");
+/* harmony import */ var _img_attractions_vortex_jpg__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../img/attractions/vortex.jpg */ "./assets/img/attractions/vortex.jpg");
+/* harmony import */ var _img_attractions_panoramic_wheel_jpg__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../img/attractions/panoramic_wheel.jpg */ "./assets/img/attractions/panoramic_wheel.jpg");
+/* harmony import */ var _img_attractions_seashells_jpg__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../img/attractions/seashells.jpg */ "./assets/img/attractions/seashells.jpg");
+/* harmony import */ var _img_shapes_smile_svg__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../img/shapes/smile.svg */ "./assets/img/shapes/smile.svg");
+/* harmony import */ var _img_shapes_circle_svg__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../img/shapes/circle.svg */ "./assets/img/shapes/circle.svg");
+/* harmony import */ var _img_shapes_triangle_svg__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../img/shapes/triangle.svg */ "./assets/img/shapes/triangle.svg");
+/* harmony import */ var _scss_main_scss__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../scss/main.scss */ "./assets/scss/main.scss");
+/* harmony import */ var _index_html__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../index.html */ "./index.html");
+/* harmony import */ var _gallery_html__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../../gallery.html */ "./gallery.html");
+/* harmony import */ var _contacts_html__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../../contacts.html */ "./contacts.html");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! axios */ "../node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_19__);
+
+
+
+
+
+
+
+
 
 
 
@@ -48,26 +64,60 @@ var options = {
 };
 
 var App = function App() {
+  var weatherText = document.getElementsByClassName('weather__text')[1];
+  var hamburgerMenu = document.querySelector('#menu');
+  var headerNav = document.querySelector('.nav');
+  var weatherContainer = document.querySelector('#weather');
+
   var getWeather = /*#__PURE__*/function () {
-    var _ref = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().mark(function _callee(toSet) {
+    var _ref = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__["default"])( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().mark(function _callee(toSet, text) {
       var weather;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default().wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
-              weather = axios__WEBPACK_IMPORTED_MODULE_11___default().request(options).then(function (response) {
-                return (response.data.main.temp - 273.15).toFixed(1) + '°C';
+              weather = axios__WEBPACK_IMPORTED_MODULE_19___default().request(options).then(function (response) {
+                return (response.data.main.temp - 273.15).toFixed(1);
               })["catch"](function (err) {
                 return console.log(err);
               });
-              toSet.innerHTML = "<div class=\"loader\"></div>";
-              _context.next = 4;
+              _context.next = 3;
               return weather;
 
-            case 4:
-              toSet.innerHTML = _context.sent;
+            case 3:
+              _context.t0 = _context.sent;
 
-            case 5:
+              if (!(_context.t0 >= 18)) {
+                _context.next = 6;
+                break;
+              }
+
+              text.innerHTML = 'Сейчас отличная погода для прогулки!';
+
+            case 6:
+              _context.next = 8;
+              return weather;
+
+            case 8:
+              _context.t1 = _context.sent;
+
+              if (!(_context.t1 < 18)) {
+                _context.next = 11;
+                break;
+              }
+
+              text.innerHTML = 'Похоже, придется надеть куртку или ветровку, чтобы выйти на прогулку!';
+
+            case 11:
+              toSet.innerHTML = "<div class=\"loader\"></div>";
+              _context.next = 14;
+              return weather;
+
+            case 14:
+              _context.t2 = _context.sent;
+              toSet.innerHTML = _context.t2 + '°C';
+
+            case 16:
             case "end":
               return _context.stop();
           }
@@ -75,15 +125,12 @@ var App = function App() {
       }, _callee);
     }));
 
-    return function getWeather(_x) {
+    return function getWeather(_x, _x2) {
       return _ref.apply(this, arguments);
     };
   }();
 
-  var hamburgerMenu = document.querySelector('#menu');
-  var headerNav = document.querySelector('.nav');
-  var weatherContainer = document.querySelector('#weather');
-  getWeather(weatherContainer);
+  getWeather(weatherContainer, weatherText);
 
   if (window.innerWidth < 926) {
     var revealNav = function revealNav(event) {
@@ -102,6 +149,40 @@ document.addEventListener('DOMContentLoaded', App);
 
 /***/ }),
 
+/***/ "./contacts.html":
+/*!***********************!*\
+  !*** ./contacts.html ***!
+  \***********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+// Module
+var code = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Document</title>\n    <link rel=\"stylesheet\" href=\"./assets/css/style.min.css\">\n</head>\n<body>\n\n    <header class=\"header\">\n        <a href=\"#\" class=\"logo__link\">\n            <img src=\"./assets/img/logo_gradient.svg\" alt=\"beerplace\" class=\"logo__img\">\n        </a>\n\n        <nav class=\"nav\">\n            <ul class=\"nav__list\">\n                <a href=\"#\" class=\"nav__link\">\n                    <li class=\"nav__item\">О нас</li>\n                </a>\n                <a href=\"#\" class=\"nav__link\">\n                    <li class=\"nav__item\">Галерея</li>\n                </a>\n                <a href=\"#\" class=\"nav__link\">\n                    <li class=\"nav__item\">Контакты</li>\n                </a>\n            </ul>\n\n            <input type=\"text\" class=\"search\" placeholder=\"Поиск\">\n        </nav>\n\n        <div id=\"menu\" class=\"hamburger\">\n            <div class=\"hamburger__bar\"></div>\n            <div class=\"hamburger__bar\"></div>\n            <div class=\"hamburger__bar\"></div>\n        </div>\n    </header>\n\n<section class=\"intro\">\n    <div class=\"intro__backimg\"></div>\n    <div class=\"center_view\">\n        <!--            <ul class=\"intro__social-list\">-->\n        <!--                <li class=\"intro__social-item\">-->\n        <!--                    <a href=\"\" class=\"intro__social-link\">-->\n        <!--                        <i class=\"intro__social-icon fa-brands fa-vk\"></i>-->\n        <!--                    </a>-->\n        <!--                </li>-->\n        <!--                <li class=\"intro__social-item\">-->\n        <!--                    <a href=\"\" class=\"intro__social-link\">-->\n        <!--                        <i class=\"intro__social-icon fa-brands fa-instagram\"></i>-->\n        <!--                    </a>-->\n        <!--                </li>-->\n        <!--                <li class=\"intro__social-item\">-->\n        <!--                    <a href=\"\" class=\"intro__social-link\">-->\n        <!--                        <i class=\"intro__social-icon fa-brands fa-vk\"></i>-->\n        <!--                    </a>-->\n        <!--                </li>-->\n        <!--            </ul>-->\n        <div class=\"intro__inner\">\n            <div class=\"intro__left\">\n                <a href=\"#\" class=\"intro__logo\">\n                    <img src=\"./assets/img/whitelogo.svg\" alt=\"beerplace\">\n                </a>\n            </div>\n            <div class=\"intro__right\">\n                <h2 class=\"intro__title\">Парк культуры и отдыха</h2>\n                <h3 class=\"intro__subtitle\">\n                    В Омске\n                </h3>\n            </div>\n        </div>\n    </div>\n</section>\n\n\n    <main class=\"main\">\n        <section class=\"section\">\n            <div class=\"weather\">\n    <!--                <p id=\"weather\" style=\"color: #000\"></p>-->\n                    <p class=\"weather__text\">\n                        В Омске сейчас\n                    </p>\n                    <p class=\"weather__digit\" id=\"weather\"></p>\n                    <p class=\"weather__text\">\n                    </p>\n                </div>\n        </section>\n        <section class=\"section\">\n            <div class=\"container\">\n                <h4 class=\"section__title\">\n                    Ознакомтесь с <span class=\"text-alternate\">нашими аттракционами</span>\n                </h4>\n\n                <div class=\"attractions\">\n                    <div class=\"attractions__item\">\n                        <div class=\"attractions__img-container\" style=\"background: #BF3F3F\">\n                            <img src=\"./assets/img/smile.svg\" class=\"attractions__under-img\"/>\n                            <img src=\"./assets/img/vortex.jpg\" alt=\"\" class=\"attractions__img\">\n                        </div>\n                        <div class=\"attractions__text\">\n                            <h4 class=\"attractions__title\">\n                                Вихрь\n                            </h4>\n                            <p class=\"attractions__descr\">\n                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium doloribus et magni repellendus rerum sed sit sunt. Exercitationem facilis hic sapiente. A aperiam est itaque labore non recusandae sed totam.\n                            </p>\n                        </div>\n                    </div>\n                    <div class=\"attractions__item-right\">\n\n                        <div class=\"attractions__text\">\n                            <h4 class=\"attractions__title\">\n                                Колесо обозрения\n                            </h4>\n                            <p class=\"attractions__descr\">\n                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium doloribus et magni repellendus rerum sed sit sunt. Exercitationem facilis hic sapiente. A aperiam est itaque labore non recusandae sed totam.\n                            </p>\n                        </div>\n                        <div class=\"attractions__img-container\" style=\"background: #3FB8BF\">\n                            <img src=\"./assets/img/triangle.svg\" class=\"attractions__under-img-right\"/>\n                            <img src=\"./assets/img/panoramic_wheel.jpg\" alt=\"\" class=\"attractions__img-right\">\n                        </div>\n                    </div>\n                    <div class=\"attractions__item\">\n                        <div class=\"attractions__img-container\" style=\"background:#FFFD8E\">\n                            <img src=\"./assets/img/circle.svg\" class=\"attractions__under-img\"/>\n                            <img src=\"./assets/img/seashells.jpg\" alt=\"\" class=\"attractions__img\">\n                        </div>\n                        <div class=\"attractions__text\">\n                            <h4 class=\"attractions__title\">\n                                Ракушки\n                            </h4>\n                            <p class=\"attractions__descr\">\n                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium doloribus et magni repellendus rerum sed sit sunt. Exercitationem facilis hic sapiente. A aperiam est itaque labore non recusandae sed totam.\n                            </p>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </section>\n        <section class=\"section\">\n            <h4 class=\"section__title\">\n                Свяжитесь с <span class=\"text-alternate\">нами</span>\n            </h4>\n            <div class=\"container\">\n                <form action=\"#\" class=\"form\" method=\"post\">\n                    <label class=\"form__label\">\n                        Введите ваше имя\n                        <input class=\"form__control\" type=\"text\" placeholder=\"Имя\">\n                    </label>\n                    <label class=\"form__label\">\n                        Введите ваш email\n                    <input class=\"form__control\" type=\"email\" placeholder=\"email\">\n                    </label>\n                        <label class=\"form__label\">\n                            Ваше сообщение\n                        <textarea class=\"form__control-area\" placeholder=\"Ваше сообщение\" cols=\"30\" rows=\"10\"></textarea>\n                        </label>\n                    <input type=\"submit\" class=\"form__submit\" value=\"Отправить\">\n                </form>\n            </div>\n        </section>\n    </main>\n\n    <footer class=\"footer\">\n\n            <nav class=\"social\">\n                <li class=\"social__item\">\n                    <a href=\"\" class=\"social__link\">\n                        <i class=\"social__ico fa-brands fa-vk\"></i>\n                    </a>\n                </li>\n                <li class=\"social__item\">\n                    <a href=\"\" class=\"social__link\">\n                        <i class=\" social__ico fa-brands fa-instagram-square\"></i>\n                    </a>\n                </li>\n                <li class=\"social__item\">\n                    <a href=\"\" class=\"social__link\">\n                        <i class=\"social__ico fa-brands fa-facebook-square\"></i>\n                    </a>\n                </li>\n            </nav>\n            <hr class=\"footer__split\">\n\n            <div class=\"footer__row\">\n                <div class=\"footer__col\">\n                    <nav class=\"footer-nav\">\n                        <li class=\"footer-nav__item\">\n                            <a href=\"#\" class=\"footer-nav__link\">Главная</a>\n                        </li>\n                        <li class=\"footer-nav__item\">\n                            <a href=\"#\" class=\"footer-nav__link\">Галерея</a>\n                        </li>\n                        <li class=\"footer-nav__item\">\n                            <a href=\"#\" class=\"footer-nav__link\">Контакты</a>\n                        </li>\n                    </nav>\n                </div>\n                <div class=\"footer__col\">\n                    <p class=\"footer-nav__item\"><span class=\"text-alternate\">Адрес:</span> c. Мичурино</p>\n                    <p class=\"footer-nav__item\"><span class=\"text-alternate\">Телефон:</span> 831290312</p>\n                </div>\n            </div>\n    </footer>\n\n</body>\n</html>";
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (code);
+
+/***/ }),
+
+/***/ "./gallery.html":
+/*!**********************!*\
+  !*** ./gallery.html ***!
+  \**********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+// Module
+var code = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Document</title>\n    <link rel=\"stylesheet\" href=\"./assets/css/style.min.css\">\n</head>\n<body>\n\n    <header class=\"header\">\n        <a href=\"#\" class=\"logo__link\">\n            <img src=\"./assets/img/logo_gradient.svg\" alt=\"beerplace\" class=\"logo__img\">\n        </a>\n\n        <nav class=\"nav\">\n            <ul class=\"nav__list\">\n                <a href=\"#\" class=\"nav__link\">\n                    <li class=\"nav__item\">О нас</li>\n                </a>\n                <a href=\"#\" class=\"nav__link\">\n                    <li class=\"nav__item\">Галерея</li>\n                </a>\n                <a href=\"#\" class=\"nav__link\">\n                    <li class=\"nav__item\">Контакты</li>\n                </a>\n            </ul>\n\n            <input type=\"text\" class=\"search\" placeholder=\"Поиск\">\n        </nav>\n\n        <div id=\"menu\" class=\"hamburger\">\n            <div class=\"hamburger__bar\"></div>\n            <div class=\"hamburger__bar\"></div>\n            <div class=\"hamburger__bar\"></div>\n        </div>\n    </header>\n\n<section class=\"intro\">\n    <div class=\"intro__backimg\"></div>\n    <div class=\"center_view\">\n        <!--            <ul class=\"intro__social-list\">-->\n        <!--                <li class=\"intro__social-item\">-->\n        <!--                    <a href=\"\" class=\"intro__social-link\">-->\n        <!--                        <i class=\"intro__social-icon fa-brands fa-vk\"></i>-->\n        <!--                    </a>-->\n        <!--                </li>-->\n        <!--                <li class=\"intro__social-item\">-->\n        <!--                    <a href=\"\" class=\"intro__social-link\">-->\n        <!--                        <i class=\"intro__social-icon fa-brands fa-instagram\"></i>-->\n        <!--                    </a>-->\n        <!--                </li>-->\n        <!--                <li class=\"intro__social-item\">-->\n        <!--                    <a href=\"\" class=\"intro__social-link\">-->\n        <!--                        <i class=\"intro__social-icon fa-brands fa-vk\"></i>-->\n        <!--                    </a>-->\n        <!--                </li>-->\n        <!--            </ul>-->\n        <div class=\"intro__inner\">\n            <div class=\"intro__left\">\n                <a href=\"#\" class=\"intro__logo\">\n                    <img src=\"./assets/img/whitelogo.svg\" alt=\"beerplace\">\n                </a>\n            </div>\n            <div class=\"intro__right\">\n                <h2 class=\"intro__title\">Парк культуры и отдыха</h2>\n                <h3 class=\"intro__subtitle\">\n                    В Омске\n                </h3>\n            </div>\n        </div>\n    </div>\n</section>\n\n\n    <main class=\"main\">\n        <section class=\"section\">\n            <div class=\"weather\">\n    <!--                <p id=\"weather\" style=\"color: #000\"></p>-->\n                    <p class=\"weather__text\">\n                        В Омске сейчас\n                    </p>\n                    <p class=\"weather__digit\" id=\"weather\"></p>\n                    <p class=\"weather__text\">\n                    </p>\n                </div>\n        </section>\n        <section class=\"section\">\n            <div class=\"container\">\n                <h4 class=\"section__title\">\n                    Ознакомтесь с <span class=\"text-alternate\">нашими аттракционами</span>\n                </h4>\n\n                <div class=\"attractions\">\n                    <div class=\"attractions__item\">\n                        <div class=\"attractions__img-container\" style=\"background: #BF3F3F\">\n                            <img src=\"./assets/img/smile.svg\" class=\"attractions__under-img\"/>\n                            <img src=\"./assets/img/vortex.jpg\" alt=\"\" class=\"attractions__img\">\n                        </div>\n                        <div class=\"attractions__text\">\n                            <h4 class=\"attractions__title\">\n                                Вихрь\n                            </h4>\n                            <p class=\"attractions__descr\">\n                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium doloribus et magni repellendus rerum sed sit sunt. Exercitationem facilis hic sapiente. A aperiam est itaque labore non recusandae sed totam.\n                            </p>\n                        </div>\n                    </div>\n                    <div class=\"attractions__item-right\">\n\n                        <div class=\"attractions__text\">\n                            <h4 class=\"attractions__title\">\n                                Колесо обозрения\n                            </h4>\n                            <p class=\"attractions__descr\">\n                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium doloribus et magni repellendus rerum sed sit sunt. Exercitationem facilis hic sapiente. A aperiam est itaque labore non recusandae sed totam.\n                            </p>\n                        </div>\n                        <div class=\"attractions__img-container\" style=\"background: #3FB8BF\">\n                            <img src=\"./assets/img/triangle.svg\" class=\"attractions__under-img-right\"/>\n                            <img src=\"./assets/img/panoramic_wheel.jpg\" alt=\"\" class=\"attractions__img-right\">\n                        </div>\n                    </div>\n                    <div class=\"attractions__item\">\n                        <div class=\"attractions__img-container\" style=\"background:#FFFD8E\">\n                            <img src=\"./assets/img/circle.svg\" class=\"attractions__under-img\"/>\n                            <img src=\"./assets/img/seashells.jpg\" alt=\"\" class=\"attractions__img\">\n                        </div>\n                        <div class=\"attractions__text\">\n                            <h4 class=\"attractions__title\">\n                                Ракушки\n                            </h4>\n                            <p class=\"attractions__descr\">\n                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium doloribus et magni repellendus rerum sed sit sunt. Exercitationem facilis hic sapiente. A aperiam est itaque labore non recusandae sed totam.\n                            </p>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </section>\n        <section class=\"section\">\n            <h4 class=\"section__title\">\n                Свяжитесь с <span class=\"text-alternate\">нами</span>\n            </h4>\n            <div class=\"container\">\n                <form action=\"#\" class=\"form\" method=\"post\">\n                    <label class=\"form__label\">\n                        Введите ваше имя\n                        <input class=\"form__control\" type=\"text\" placeholder=\"Имя\">\n                    </label>\n                    <label class=\"form__label\">\n                        Введите ваш email\n                    <input class=\"form__control\" type=\"email\" placeholder=\"email\">\n                    </label>\n                        <label class=\"form__label\">\n                            Ваше сообщение\n                        <textarea class=\"form__control-area\" placeholder=\"Ваше сообщение\" cols=\"30\" rows=\"10\"></textarea>\n                        </label>\n                    <input type=\"submit\" class=\"form__submit\" value=\"Отправить\">\n                </form>\n            </div>\n        </section>\n    </main>\n\n    <footer class=\"footer\">\n\n            <nav class=\"social\">\n                <li class=\"social__item\">\n                    <a href=\"\" class=\"social__link\">\n                        <i class=\"social__ico fa-brands fa-vk\"></i>\n                    </a>\n                </li>\n                <li class=\"social__item\">\n                    <a href=\"\" class=\"social__link\">\n                        <i class=\" social__ico fa-brands fa-instagram-square\"></i>\n                    </a>\n                </li>\n                <li class=\"social__item\">\n                    <a href=\"\" class=\"social__link\">\n                        <i class=\"social__ico fa-brands fa-facebook-square\"></i>\n                    </a>\n                </li>\n            </nav>\n            <hr class=\"footer__split\">\n\n            <div class=\"footer__row\">\n                <div class=\"footer__col\">\n                    <nav class=\"footer-nav\">\n                        <li class=\"footer-nav__item\">\n                            <a href=\"#\" class=\"footer-nav__link\">Главная</a>\n                        </li>\n                        <li class=\"footer-nav__item\">\n                            <a href=\"#\" class=\"footer-nav__link\">Галерея</a>\n                        </li>\n                        <li class=\"footer-nav__item\">\n                            <a href=\"#\" class=\"footer-nav__link\">Контакты</a>\n                        </li>\n                    </nav>\n                </div>\n                <div class=\"footer__col\">\n                    <p class=\"footer-nav__item\"><span class=\"text-alternate\">Адрес:</span> c. Мичурино</p>\n                    <p class=\"footer-nav__item\"><span class=\"text-alternate\">Телефон:</span> 831290312</p>\n                </div>\n            </div>\n    </footer>\n\n</body>\n</html>";
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (code);
+
+/***/ }),
+
 /***/ "./index.html":
 /*!********************!*\
   !*** ./index.html ***!
@@ -113,7 +194,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 // Module
-var code = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Document</title>\n    <link rel=\"stylesheet\" href=\"./assets/css/style.min.css\">\n</head>\n<body>\n\n    <header class=\"header\">\n        <a href=\"#\" class=\"logo__link\">\n            <img src=\"./assets/img/whitelogo.svg\" alt=\"beerplace\" class=\"logo__img\">\n        </a>\n\n        <nav class=\"nav\">\n            <ul class=\"nav__list\">\n                <a href=\"#\" class=\"nav__link\">\n                    <li class=\"nav__item\">О нас</li>\n                </a>\n                <a href=\"#\" class=\"nav__link\">\n                    <li class=\"nav__item\">Галерея</li>\n                </a>\n                <a href=\"#\" class=\"nav__link\">\n                    <li class=\"nav__item\">Контакты</li>\n                </a>\n            </ul>\n\n            <input type=\"text\" class=\"search\" placeholder=\"Поиск\">\n        </nav>\n\n        <div id=\"menu\" class=\"hamburger\">\n            <div class=\"hamburger__bar\"></div>\n            <div class=\"hamburger__bar\"></div>\n            <div class=\"hamburger__bar\"></div>\n        </div>\n    </header>\n\n<section class=\"intro\">\n    <div class=\"intro__backimg\"></div>\n    <div class=\"center_view\">\n        <!--            <ul class=\"intro__social-list\">-->\n        <!--                <li class=\"intro__social-item\">-->\n        <!--                    <a href=\"\" class=\"intro__social-link\">-->\n        <!--                        <i class=\"intro__social-icon fa-brands fa-vk\"></i>-->\n        <!--                    </a>-->\n        <!--                </li>-->\n        <!--                <li class=\"intro__social-item\">-->\n        <!--                    <a href=\"\" class=\"intro__social-link\">-->\n        <!--                        <i class=\"intro__social-icon fa-brands fa-instagram\"></i>-->\n        <!--                    </a>-->\n        <!--                </li>-->\n        <!--                <li class=\"intro__social-item\">-->\n        <!--                    <a href=\"\" class=\"intro__social-link\">-->\n        <!--                        <i class=\"intro__social-icon fa-brands fa-vk\"></i>-->\n        <!--                    </a>-->\n        <!--                </li>-->\n        <!--            </ul>-->\n        <div class=\"intro__inner\">\n            <div class=\"intro__left\">\n                <a href=\"#\" class=\"intro__logo\">\n                    <img src=\"./assets/img/whitelogo.svg\" alt=\"beerplace\">\n                </a>\n            </div>\n            <div class=\"intro__right\">\n                <h2 class=\"intro__title\">Парк культуры и отдыха</h2>\n                <h3 class=\"intro__subtitle\">\n                    В Омске\n                </h3>\n            </div>\n        </div>\n    </div>\n</section>\n\n\n    <main class=\"main\">\n        <section class=\"section\">\n            <div class=\"weather\">\n    <!--                <p id=\"weather\" style=\"color: #000\"></p>-->\n                    <p class=\"weather__text\">\n                        В Омске сейчас\n                    </p>\n                    <p class=\"weather__digit\" id=\"weather\"></p>\n                    <p class=\"weather__text\">\n                        По-моему, сейчас отличная погода для прогулки!\n                    </p>\n                </div>\n        </section>\n        <div class=\"section\">\n            <div class=\"container\">\n                <h4 class=\"section__title\">\n                    Ознакомтесь с <span class=\"text-alternate\">нашими аттракционами</span>\n                </h4>\n\n                <div class=\"attractions\">\n                    <div class=\"attractions__item\">\n                        <div class=\"attractions__img-container\">\n                            <div class=\"attractions__under-img\"></div>\n                            <img src=\"./assets/img/vortex.jpg\" alt=\"\" class=\"attractions__img\">\n                        </div>\n                        <div class=\"attractions__text\">\n                            <h4 class=\"attractions__title\">\n                                Вихрь\n                            </h4>\n                            <p class=\"attractions__descr\">\n                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium doloribus et magni repellendus rerum sed sit sunt. Exercitationem facilis hic sapiente. A aperiam est itaque labore non recusandae sed totam.\n                            </p>\n                        </div>\n                    </div>\n                    <div class=\"attractions__item-right\">\n\n                        <div class=\"attractions__text\">\n                            <h4 class=\"attractions__title\">\n                                Вихрь\n                            </h4>\n                            <p class=\"attractions__descr\">\n                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium doloribus et magni repellendus rerum sed sit sunt. Exercitationem facilis hic sapiente. A aperiam est itaque labore non recusandae sed totam.\n                            </p>\n                        </div>\n                        <img class=\"attractions__img-container\">\n                            <img src=\"./assets/img/smile.svg\" class=\"attractions__under-img\"/>\n                            <img src=\"./assets/img/vortex.jpg\" alt=\"\" class=\"attractions__img\">\n                        </div>\n                    </div>\n                    <div class=\"attractions__item\">\n                        <div class=\"attractions__img-container\">\n                            <div class=\"attractions__under-img\"></div>\n                            <img src=\"./assets/img/vortex.jpg\" alt=\"\" class=\"attractions__img\">\n                        </div>\n                        <div class=\"attractions__text\">\n                            <h4 class=\"attractions__title\">\n                                Вихрь\n                            </h4>\n                            <p class=\"attractions__descr\">\n                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium doloribus et magni repellendus rerum sed sit sunt. Exercitationem facilis hic sapiente. A aperiam est itaque labore non recusandae sed totam.\n                            </p>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </main>\n\n</body>\n</html>";
+var code = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Document</title>\n    <link rel=\"stylesheet\" href=\"./assets/css/style.min.css\">\n</head>\n<body>\n\n    <header class=\"header\">\n        <a href=\"#\" class=\"logo__link\">\n            <img src=\"./assets/img/logo_gradient.svg\" alt=\"beerplace\" class=\"logo__img\">\n        </a>\n\n        <nav class=\"nav\">\n            <ul class=\"nav__list\">\n                <a href=\"./gallery.html\" class=\"nav__link\">\n                    <li class=\"nav__item\">Галерея</li>\n                </a>\n                <a href=\"./contacts.html\" class=\"nav__link\">\n                    <li class=\"nav__item\">Контакты</li>\n                </a>\n            </ul>\n\n            <input type=\"text\" class=\"search\" placeholder=\"Поиск\">\n        </nav>\n\n        <div id=\"menu\" class=\"hamburger\">\n            <div class=\"hamburger__bar\"></div>\n            <div class=\"hamburger__bar\"></div>\n            <div class=\"hamburger__bar\"></div>\n        </div>\n    </header>\n\n<section class=\"intro\">\n    <div class=\"intro__backimg\"></div>\n    <div class=\"center_view\">\n        <!--            <ul class=\"intro__social-list\">-->\n        <!--                <li class=\"intro__social-item\">-->\n        <!--                    <a href=\"\" class=\"intro__social-link\">-->\n        <!--                        <i class=\"intro__social-icon fa-brands fa-vk\"></i>-->\n        <!--                    </a>-->\n        <!--                </li>-->\n        <!--                <li class=\"intro__social-item\">-->\n        <!--                    <a href=\"\" class=\"intro__social-link\">-->\n        <!--                        <i class=\"intro__social-icon fa-brands fa-instagram\"></i>-->\n        <!--                    </a>-->\n        <!--                </li>-->\n        <!--                <li class=\"intro__social-item\">-->\n        <!--                    <a href=\"\" class=\"intro__social-link\">-->\n        <!--                        <i class=\"intro__social-icon fa-brands fa-vk\"></i>-->\n        <!--                    </a>-->\n        <!--                </li>-->\n        <!--            </ul>-->\n        <div class=\"intro__inner\">\n            <div class=\"intro__left\">\n                <a href=\"#\" class=\"intro__logo\">\n                    <img src=\"./assets/img/whitelogo.svg\" alt=\"beerplace\">\n                </a>\n            </div>\n            <div class=\"intro__right\">\n                <h2 class=\"intro__title\">Парк культуры и отдыха</h2>\n                <h3 class=\"intro__subtitle\">\n                    В Омске\n                </h3>\n            </div>\n        </div>\n    </div>\n</section>\n\n\n    <main class=\"main\">\n        <section class=\"section\">\n            <div class=\"weather\">\n    <!--                <p id=\"weather\" style=\"color: #000\"></p>-->\n                    <p class=\"weather__text\">\n                        В Омске сейчас\n                    </p>\n                    <p class=\"weather__digit\" id=\"weather\"></p>\n                    <p class=\"weather__text\">\n                    </p>\n                </div>\n        </section>\n        <section class=\"section\">\n            <div class=\"container\">\n                <h4 class=\"section__title\">\n                    Ознакомтесь с <span class=\"text-alternate\">нашими аттракционами</span>\n                </h4>\n\n                <div class=\"attractions\">\n                    <div class=\"attractions__item\">\n                        <div class=\"attractions__img-container\" style=\"background: #BF3F3F\">\n                            <img src=\"./assets/img/smile.svg\" class=\"attractions__under-img\"/>\n                            <img src=\"./assets/img/vortex.jpg\" alt=\"\" class=\"attractions__img\">\n                        </div>\n                        <div class=\"attractions__text\">\n                            <h4 class=\"attractions__title\">\n                                Вихрь\n                            </h4>\n                            <p class=\"attractions__descr\">\n                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium doloribus et magni repellendus rerum sed sit sunt. Exercitationem facilis hic sapiente. A aperiam est itaque labore non recusandae sed totam.\n                            </p>\n                        </div>\n                    </div>\n                    <div class=\"attractions__item-right\">\n\n                        <div class=\"attractions__text\">\n                            <h4 class=\"attractions__title\">\n                                Колесо обозрения\n                            </h4>\n                            <p class=\"attractions__descr\">\n                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium doloribus et magni repellendus rerum sed sit sunt. Exercitationem facilis hic sapiente. A aperiam est itaque labore non recusandae sed totam.\n                            </p>\n                        </div>\n                        <div class=\"attractions__img-container\" style=\"background: #3FB8BF\">\n                            <img src=\"./assets/img/triangle.svg\" class=\"attractions__under-img-right\"/>\n                            <img src=\"./assets/img/panoramic_wheel.jpg\" alt=\"\" class=\"attractions__img-right\">\n                        </div>\n                    </div>\n                    <div class=\"attractions__item\">\n                        <div class=\"attractions__img-container\" style=\"background:#FFFD8E\">\n                            <img src=\"./assets/img/circle.svg\" class=\"attractions__under-img\"/>\n                            <img src=\"./assets/img/seashells.jpg\" alt=\"\" class=\"attractions__img\">\n                        </div>\n                        <div class=\"attractions__text\">\n                            <h4 class=\"attractions__title\">\n                                Ракушки\n                            </h4>\n                            <p class=\"attractions__descr\">\n                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium doloribus et magni repellendus rerum sed sit sunt. Exercitationem facilis hic sapiente. A aperiam est itaque labore non recusandae sed totam.\n                            </p>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </section>\n        <section class=\"section\">\n            <h4 class=\"section__title\">\n                Свяжитесь с <span class=\"text-alternate\">нами</span>\n            </h4>\n            <div class=\"container\">\n                <form action=\"#\" class=\"form\" method=\"post\">\n                    <label class=\"form__label\">\n                        Введите ваше имя\n                        <input class=\"form__control\" type=\"text\" placeholder=\"Имя\">\n                    </label>\n                    <label class=\"form__label\">\n                        Введите ваш email\n                    <input class=\"form__control\" type=\"email\" placeholder=\"email\">\n                    </label>\n                        <label class=\"form__label\">\n                            Ваше сообщение\n                        <textarea class=\"form__control-area\" placeholder=\"Ваше сообщение\" cols=\"30\" rows=\"10\"></textarea>\n                        </label>\n                    <input type=\"submit\" class=\"form__submit\" value=\"Отправить\">\n                </form>\n            </div>\n        </section>\n    </main>\n\n    <footer class=\"footer\">\n\n            <nav class=\"social\">\n                <li class=\"social__item\">\n                    <a href=\"\" class=\"social__link\">\n                        <i class=\"social__ico fa-brands fa-vk\"></i>\n                    </a>\n                </li>\n                <li class=\"social__item\">\n                    <a href=\"\" class=\"social__link\">\n                        <i class=\" social__ico fa-brands fa-instagram-square\"></i>\n                    </a>\n                </li>\n                <li class=\"social__item\">\n                    <a href=\"\" class=\"social__link\">\n                        <i class=\"social__ico fa-brands fa-facebook-square\"></i>\n                    </a>\n                </li>\n            </nav>\n            <hr class=\"footer__split\">\n\n            <div class=\"footer__row\">\n                <div class=\"footer__col\">\n                    <nav class=\"footer-nav\">\n                        <li class=\"footer-nav__item\">\n                            <a href=\"./index.html\" class=\"footer-nav__link\">Главная</a>\n                        </li>\n                        <li class=\"footer-nav__item\">\n                            <a href=\"./gallery.html\" class=\"footer-nav__link\">Галерея</a>\n                        </li>\n                        <li class=\"footer-nav__item\">\n                            <a href=\"./contacts.html\" class=\"footer-nav__link\">Контакты</a>\n                        </li>\n                    </nav>\n                </div>\n                <div class=\"footer__col\">\n                    <p class=\"footer-nav__item\"><span class=\"text-alternate\">Адрес:</span> c. Мичурино</p>\n                    <p class=\"footer-nav__item\"><span class=\"text-alternate\">Телефон:</span> 831290312</p>\n                </div>\n            </div>\n    </footer>\n\n</body>\n</html>";
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (code);
 
@@ -128,6 +209,26 @@ var code = "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
+
+/***/ }),
+
+/***/ "./assets/img/attractions/panoramic_wheel.jpg":
+/*!****************************************************!*\
+  !*** ./assets/img/attractions/panoramic_wheel.jpg ***!
+  \****************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "./assets/img/panoramic_wheel.jpg";
+
+/***/ }),
+
+/***/ "./assets/img/attractions/seashells.jpg":
+/*!**********************************************!*\
+  !*** ./assets/img/attractions/seashells.jpg ***!
+  \**********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "./assets/img/seashells.jpg";
 
 /***/ }),
 
@@ -148,6 +249,46 @@ module.exports = __webpack_require__.p + "./assets/img/vortex.jpg";
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 module.exports = __webpack_require__.p + "./assets/img/intro.jpg";
+
+/***/ }),
+
+/***/ "./assets/img/logo_gradient.svg":
+/*!**************************************!*\
+  !*** ./assets/img/logo_gradient.svg ***!
+  \**************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "./assets/img/logo_gradient.svg";
+
+/***/ }),
+
+/***/ "./assets/img/shapes/circle.svg":
+/*!**************************************!*\
+  !*** ./assets/img/shapes/circle.svg ***!
+  \**************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "./assets/img/circle.svg";
+
+/***/ }),
+
+/***/ "./assets/img/shapes/smile.svg":
+/*!*************************************!*\
+  !*** ./assets/img/shapes/smile.svg ***!
+  \*************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "./assets/img/smile.svg";
+
+/***/ }),
+
+/***/ "./assets/img/shapes/triangle.svg":
+/*!****************************************!*\
+  !*** ./assets/img/shapes/triangle.svg ***!
+  \****************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "./assets/img/triangle.svg";
 
 /***/ }),
 
